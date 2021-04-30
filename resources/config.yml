@@ -1,0 +1,76 @@
+﻿#GrieferKing BankSystem Plugin
+
+#Plugin Prefix
+
+prefix: §aBank §7» §f
+
+# provider-settings: Daten zum Anmelden bei der Datenbank
+
+provider-settings:
+  host: 134.255.253.170
+  port: 3306
+  user: EndermanLetsPlay-897013
+  password: FGYDhQzAzjVGUrkf5EUwQraRA
+  db: EndermanLetsPlay-897013
+
+#Player Konto Form
+
+playerform-title: "§a§lKonto Verwaltung"
+playerform-content: "§7Wähle eine Kontoaktion aus ...\n §eDein momentaner Kontostand beträgt: §7» §c{bank-inhalt}"
+newplayerform-title: "§a§lKonto Verwaltung"
+newplayerform-content: "§7Erstelle ein Konto und genießen die Vorteile"
+
+#Private Confirm Form
+
+confirm-title: "§a§lPrivates Konto erstellen"
+confirm-content: "§aWillst du wirklich ein Privates Konto erstellen? Die Kosten für die Erstellung eines Privaten Kontos beträgt: §c"
+
+#Global Confirm Form
+
+global-confirm-title: "§a§lGemeinsames Konto erstellen"
+global-confirm-content: "§aWillst du wirklich ein Gemeinsames Konto erstellen? Die Kosten für die Erstellung eines Gemeinsamen Kontos beträgt: §c"
+
+#Delete Confirm Form
+
+delete-confirm-title: "§c§lKonto kündigen"
+delete-confirm-content: "§aWillst du wirklich dein Konto kündigen? Dir wird nach der Kündigung das restliche Guthaben gutgeschrieben: §e"
+delete-message: "§cDu hast soeben dein Konto bei der Bank gekündigt! §fDir wurden die restlichen §e{bank-money} Coins §fauf dein Guthaben gutgeschrieben!"
+
+#Admin Form
+
+adminform-title: "§a§lAdmin Konten Verwaltung"
+adminform-content: "§cVerwalte Bank Konten von anderen Spielern"
+
+# §a§lGeimsame Konten Member Verwaltung
+
+managemember-title: "§6§lMember Verwaltung"
+managemember-content: "§cVerwalte Mitglíeder von deinem Konto"
+
+#Hier können die User einstellungen am GGlobal Konto vortreffen
+
+manager-title: "§l§aMitglieder Editor"
+manager-content: "§eWähle deine Aktion:"
+
+# Kosten der Erstellung eines Privaten Kontos
+
+bank-cost: 10000
+
+# Kosten der Erstellung eines Globalen Kontos
+
+global-bank-cost: 20000
+
+#Bank No Permissions Message
+
+no-perm: "§cDu hast keine Permission"
+
+#Bank Permissions
+
+perm: bank.use
+
+#Bank Admin Permissions
+
+admin-perm: bank.use.admin
+
+#/bank desc
+
+cmd-description: "Grieferking Bank-System"
