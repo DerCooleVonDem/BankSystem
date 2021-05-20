@@ -13,6 +13,7 @@ class MySQLProvider
     /** @var \ MySQLi */
     private static $database;
 
+
     /**
      * MySQLProvider constructor.
      *
@@ -35,6 +36,13 @@ class MySQLProvider
         return MySQLProvider::$database;
     }
 
+
+    /*
+
+        ---------------- MySQL Requests ----------------
+
+     */
+
     public static function existsID($id){
         $result = self::$database->query("SELECT * FROM BankAccounts WHERE AccountID = '$id'");
         return $result->num_rows > 0 ? true:false;
@@ -42,7 +50,12 @@ class MySQLProvider
 
 
     public static function existsAccount($playername){
-        $result = self::$database->query("SELECT * FROM BankAccounts WHERE owner = '$playername'");
+        $result = self::$database->query("SELECT * FROM BankAccounts WHERE owner = '$playername' AND perms = false");
+        return $result->num_rows > 0 ? true:false;
+    }
+
+    public static function existsGlobalAccount($playername){
+        $result = self::$database->query("SELECT * FROM BankAccounts WHERE owner = '$playername' AND perms = true");
         return $result->num_rows > 0 ? true:false;
     }
 
@@ -54,6 +67,14 @@ class MySQLProvider
         return $ret;
     }
 
+
+    /*
+
+    ---------------- MySQL GET Data ----------------
+
+    */
+
+
     public static function getBankdata($data, $id)
     {
         $res = MySQLProvider::$database->query("SELECT '$data' FROM BankAccounts WHERE AccountID = '$id'");
@@ -62,9 +83,9 @@ class MySQLProvider
         return $ret;
     }
 
-    public static function getIDfromAccount($playername)
+    public static function getIDfromAccount($playername, $state = false)
     {
-        $res = MySQLProvider::$database->query("SELECT AccountID FROM BankAccounts WHERE owner = '$playername'");
+        $res = MySQLProvider::$database->query("SELECT AccountID FROM BankAccounts WHERE owner = '$playername' AND perms = '$state'");
         $ret = $res->fetch_array()[0] ?? false;
         $res->free();
         return $ret;
@@ -85,6 +106,14 @@ class MySQLProvider
         $res->free();
         return $ret;
     }
+
+
+    /*
+
+        ---------------- MySQL SET Data ----------------
+
+    */
+
 
     public static function setMoneybyID($id, $money)
     {
@@ -107,6 +136,13 @@ class MySQLProvider
         MySQLProvider::$database->query("INSERT INTO BankAccounts (AccountID, moneycount, owner, perms) VALUES ('$id', 0, '$playername', true);");
         return;
     }
+
+    /*
+
+        ---------------- MySQL Delte Data ----------------
+
+    */
+
 
     public static function deleteAccount($id)
     {

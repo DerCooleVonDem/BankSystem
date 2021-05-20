@@ -30,13 +30,17 @@ class Main extends PluginBase{
         $this->saveResource("config.yml");
         $config = $this->getConfig();
         self::$prefix = $config->get("prefix");
+        @mkdir($this->getDataFolder() . "/permissions");
         @mkdir($this->getDataFolder() . "/players");
+        @mkdir($this->getDataFolder() . "/invites");
+        @mkdir($this->getDataFolder() . "/user");
         $this->getServer()->getLogger()->info(self::$prefix . "BankSystem activated - developed by Vazzi & DerCooleVonDem");
         $this->registerCommand();
         self::registerPerms();
         date_default_timezone_set("Europe/Berlin");
         $this->db = new MySQLProvider($this);
         self::$economy = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
+        $this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
 
     }
 

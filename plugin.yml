@@ -1,6 +1,6 @@
 name: BankSystem
 version: 1.0.0
 main: Vazzi\BankSystem\Main
-api: 3.0.0
+api: 3.17.3
 author: Vazzi & DerCooleVonDem
 website: https://grieferking.de

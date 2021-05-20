@@ -24,17 +24,22 @@ newplayerform-content: "§7Erstelle ein Konto und genießen die Vorteile"
 
 confirm-title: "§a§lPrivates Konto erstellen"
 confirm-content: "§aWillst du wirklich ein Privates Konto erstellen? Die Kosten für die Erstellung eines Privaten Kontos beträgt: §c"
+private-create: "§aDu hast erfolgreich ein Privates Bank Konto erstellt."
 
 #Global Confirm Form
 
 global-confirm-title: "§a§lGemeinsames Konto erstellen"
 global-confirm-content: "§aWillst du wirklich ein Gemeinsames Konto erstellen? Die Kosten für die Erstellung eines Gemeinsamen Kontos beträgt: §c"
+global-create: "§aDu hast erfolgreich ein Gemeinsames Bank Konto erstellt."
 
 #Delete Confirm Form
 
 delete-confirm-title: "§c§lKonto kündigen"
-delete-confirm-content: "§aWillst du wirklich dein Konto kündigen? Dir wird nach der Kündigung das restliche Guthaben gutgeschrieben: §e"
-delete-message: "§cDu hast soeben dein Konto bei der Bank gekündigt! §fDir wurden die restlichen §e{bank-money} Coins §fauf dein Guthaben gutgeschrieben!"
+delete-confirm-content: "§aWillst du wirklich dein Privates Konto kündigen? Dir wird nach der Kündigung das restliche Guthaben gutgeschrieben: §e"
+delete-message: "§cDu hast soeben dein Privates Konto bei der Bank gekündigt! §fDir wurden die restlichen §e{bank-money} Coins §fauf dein Guthaben gutgeschrieben!"
+
+delete-global-confirm-content: "§aWillst du wirklich dein Globales Konto kündigen? Dir wird nach der Kündigung das restliche Guthaben gutgeschrieben: §e"
+delete-global-message: "§cDu hast soeben dein Globales Konto bei der Bank gekündigt! §fDir wurden die restlichen §e{bank-money} Coins §fauf dein Guthaben gutgeschrieben!"
 
 #Admin Form
 
@@ -46,11 +51,6 @@ adminform-content: "§cVerwalte Bank Konten von anderen Spielern"
 managemember-title: "§6§lMember Verwaltung"
 managemember-content: "§cVerwalte Mitglíeder von deinem Konto"
 
-#Hier können die User einstellungen am GGlobal Konto vortreffen
-
-manager-title: "§l§aMitglieder Editor"
-manager-content: "§eWähle deine Aktion:"
-
 # Kosten der Erstellung eines Privaten Kontos
 
 bank-cost: 10000
@@ -58,6 +58,17 @@ bank-cost: 10000
 # Kosten der Erstellung eines Globalen Kontos
 
 global-bank-cost: 20000
+
+# Error Messages
+
+not-enough-pay: "§cDu hast nicht genug Geld um dies Einzuzahlen"
+not-enough-get: "§cIn der Bank ist nicht genug Geld um dies Auszuzahlen"
+not-enough-transfer: "§cDu hast nicht Genug Geld auf dem Konto um es zu überweisen."
+no-own-transfer: "§cDu kannst dir nicht selber Geld überweisen!"
+reciver-no-account: "§cDer angegebene Spieler besitzt kein Konto!"
+only-money: "§cDu kannst nur Zahlen eingeben und keine Buchstaben oder Zeichen!"
+no-input: "§cDu hast keinen Betrag angegeben!"
+player-not-found: "§cDer angegebene Spieler wurde nicht gefunden!"
 
 #Bank No Permissions Message
 

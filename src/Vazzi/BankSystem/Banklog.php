@@ -10,7 +10,7 @@ use Vazzi\BankSystem\Provider\EconomyProvider;
 use Vazzi\BankSystem\Provider\MySQLProvider;
 use Vazzi\BankSystem\AccountAPI;
 
-//DieCooleLogAPI
+//DieCooleLogAPI v2
 /*
  * Ablage:
  * /players/
@@ -65,8 +65,8 @@ class Banklog
 
     public static function deleteLog($id){
         if(file_exists(Main::getInstance()->getDataFolder() . "/players/{$id}.yml")){
-            $cfg = new Config(Main::getInstance()->getDataFolder() . "/players/{$id}.yml", 2);
-            unset($cfg);
+            $path = Main::getInstance()->getDataFolder() . "/players/{$id}.yml";
+            unlink($path);
         }
     }
 
