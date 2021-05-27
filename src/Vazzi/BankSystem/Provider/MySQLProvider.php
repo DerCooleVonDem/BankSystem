@@ -45,18 +45,30 @@ class MySQLProvider
 
     public static function existsID($id){
         $result = self::$database->query("SELECT * FROM BankAccounts WHERE AccountID = '$id'");
-        return $result->num_rows > 0 ? true:false;
+        if($result->num_rows > 0){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 
     public static function existsAccount($playername){
         $result = self::$database->query("SELECT * FROM BankAccounts WHERE owner = '$playername' AND perms = false");
-        return $result->num_rows > 0 ? true:false;
+        if($result->num_rows > 0){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public static function existsGlobalAccount($playername){
         $result = self::$database->query("SELECT * FROM BankAccounts WHERE owner = '$playername' AND perms = true");
-        return $result->num_rows > 0 ? true:false;
+        if($result->num_rows > 0){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public static function isGlobalAccount($id)
