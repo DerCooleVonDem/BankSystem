@@ -7,11 +7,11 @@ prefix: §aBank §7» §f
 # provider-settings: Daten zum Anmelden bei der Datenbank
 
 provider-settings:
-  host: 134.255.253.170
+  host: 127.0.0.1
   port: 3306
-  user: EndermanLetsPlay-897013
-  password: FGYDhQzAzjVGUrkf5EUwQraRA
-  db: EndermanLetsPlay-897013
+  user: User556677
+  password: Hallo1234
+  db: MyDatabaseName
 
 #Player Konto Form
 
